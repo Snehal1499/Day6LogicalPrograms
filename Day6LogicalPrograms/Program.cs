@@ -1,12 +1,28 @@
 ﻿using System;
-
-namespace Day6LogicalPrograms
+using System.Diagnostics;
+using System.Threading;
+class Program
 {
-    internal class Program
+    static void Main()
     {
-        static void Main(string[] args)
+
+        // Create new stopwatch.
+        Stopwatch stopwatch = new Stopwatch();
+
+        Console.WriteLine("Starting Time ");
+        stopwatch.Start();
+
+        // Do something.
+        for (int i = 0; i < 1000; i++)
         {
-            Console.WriteLine("Welcome To Logical Programs");
+            Thread.Sleep(5);
         }
+
+        Console.WriteLine("Time stopped");
+        stopwatch.Stop();
+
+        // Write result.
+        Console.WriteLine("Time elapsed: {0}", stopwatch.Elapsed);
     }
 }
+
